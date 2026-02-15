@@ -1,6 +1,7 @@
 #import librarys
 import streamlit as st
 import time
+import random
 
 #page configuration and title
 st.set_page_config(page_title="ChatBot",page_icon="🤖")
@@ -13,6 +14,7 @@ with st.expander("About this bot"):
 #function for creating response
 def get_response(prompt):
     #dictionary of responses
+    """
     dic = {
     "hi": "Hello!☺️",
     "hello": "Hi there!☺️",
@@ -65,13 +67,17 @@ def get_response(prompt):
     "default": "Sorry, I didn't understand that.",
     "who is rumi": "Hmm… Rumi is someone special, but maybe you can figure it out 😉",
     "why your name is rumi": "Names have stories… mine is a little secret for now 😏"
-    }   
+    }
+    
+    
 
     #searching in dictionary
     key = prompt.strip().lower()
     response = dic.get(key,"Sorry, I cannot understand that.")
-
+    """
+    lis = ["o","hmm","😂","🤣"]
     #returning the value
+    response = random.choice(lis)
     for word in response.split():
         yield word + " "
         time.sleep(0.05)
