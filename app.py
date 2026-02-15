@@ -2,10 +2,13 @@
 import streamlit as st
 import time
 import random
+from PIL import Image
 
 #page configuration and title
 st.set_page_config(page_title="ChatBot",page_icon="🤖")
 st.title("Rumi ChatBot🍫")
+
+rumi = Image.open("img.jpg")
 
 #About this bot
 with st.expander("About this bot"):
@@ -103,7 +106,7 @@ if prompt:
     st.session_state.messages.append({"role":"user","content":prompt})
 
     #showing response
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant",avatar=rumi):
         #creating response using function
         response = "".join(get_response(prompt))
         st.markdown(response)
