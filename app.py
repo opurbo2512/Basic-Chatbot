@@ -75,7 +75,7 @@ def get_response(prompt):
     key = prompt.strip().lower()
     response = dic.get(key,"Sorry, I cannot understand that.")
     """
-    lis = ["o","hmm","😂","🤣"]
+    lis = ["o","hmm","😂","🤣","Ok"]
     #returning the value
     response = random.choice(lis)
     for word in response.split():
